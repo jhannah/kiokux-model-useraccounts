@@ -11,11 +11,12 @@ WriteMakefile(
     SIGN         => 1,
     PL_FILES     => { },
     PREREQ_PM    => {
-        'Test::use::ok' => 0,
+        'Test::use::ok'    => 0,
         'namespace::clean' => 0,
-        'Moose' => 0.63,
-        'KiokuDB' => 0.09,
-        'Sub::Exporter' => 0,
+        'Moose'            => 0.63,
+        'KiokuDB'          => 0.09,
+        'Sub::Exporter'    => 0,
+        'KiokuX::User'     => 0,
     },
 );
 
