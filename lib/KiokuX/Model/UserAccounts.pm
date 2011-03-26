@@ -7,40 +7,15 @@ use namespace::clean -except => 'meta';
 
 our $VERSION = "0.01";
 
-has jay => (
-    isa => "Str",
-    is  => "ro",
-    required => 1,
-    default => 'boogity',
-);
-
 =head1 NAME
 
-KiokuX::Model::UserAccounts - A generic role for storing user information in L<KiokuDB>
+KiokuX::Model::UserAccounts - Decoupled security roles for L<KiokuDB>
 
 =head1 SYNOPSIS
 
-    package MyFoo::Schema::User;
-    use Moose;
-
-    use KiokuX::User::Util qw(crypt_password);
-
-    with qw(KiokuX::User);
-
-    my $user = MyFoo::Schema::User->new(
-        id       => $user_id,
-        password => crypt_password($password),
-    );
-
-    $user->kiokudb_object_id; # "user:$user_id"
-
-    if ( $user->check_password($read_password) ) {
-        warn "Login successful";
-    } else {
-        warn "Login failed";
-    }
-
 =head1 DESCRIPTION
+
+L<http://blog.woobling.org/2009/06/users-accounts-identities-and-roles.html>
 
 =head1 VERSION CONTROL
 
