@@ -1,8 +1,20 @@
 package KiokuX::Model::UserAccounts::Identity;
 use Moose::Role;
 
-__PACKAGE__->meta->make_immutable;
-no Moose;
+with qw(
+   KiokuX::User
+   KiokuDB::Role::ID
+);
+
+has user => (
+   is  => 'rw',
+   isa => 'Narwhal::User',
+);
+
+has name => (
+   is  => 'rw',
+   isa => 'Str',
+);
 
 1;
 

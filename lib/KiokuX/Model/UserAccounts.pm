@@ -17,6 +17,18 @@ KiokuX::Model::UserAccounts - Decoupled security roles for L<KiokuDB>
 
 L<http://blog.woobling.org/2009/06/users-accounts-identities-and-roles.html>
 
+=head1 METHODS
+
+=head2 get_identity
+
+=cut
+
+sub get_identity {
+    my $self = shift;
+    my ($user_id) = @_;
+    return $self->lookup("identity:$user_id");
+}
+
 =head1 VERSION CONTROL
 
 L<http://github.com/jhannah/kiokux-model-useraccounts/>
