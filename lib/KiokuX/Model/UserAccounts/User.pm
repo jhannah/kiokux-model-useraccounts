@@ -1,17 +1,10 @@
 package KiokuX::Model::UserAccounts::User;
 use Moose::Role;
 
-with qw(
-   KiokuX::User
-   KiokuDB::Role::ID
-);
-
-
-has jay => ( 
+has name => (
    is  => 'rw',
    isa => 'Str',
-   default => 'FOOBITY!'
 );
 
-
+no Moose::Role;
 1;

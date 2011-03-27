@@ -11,11 +11,6 @@ has user => (
    isa => 'Narwhal::User',
 );
 
-has name => (
-   is  => 'rw',
-   isa => 'Str',
-);
+no Moose::Role;
 
 1;
-
-
