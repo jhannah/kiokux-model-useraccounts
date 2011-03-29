@@ -1,5 +1,7 @@
 package KiokuX::Model::UserAccounts::User;
 use Moose::Role;
+use Moose::Util::TypeConstraints;
+role_type('KiokuX::Model::UserAccounts::Identity');
 
 has name => (
    is  => 'rw',
@@ -9,10 +11,7 @@ has name => (
 has identities => (
    traits  => ['Array'],
    is      => 'rw',
-   # TODO Hmm... what I really want is:
-   # isa    => 'ArrayRef[KiokuX::Model::UserAccounts::Identity]',
-   # but that's a Role not a Class... hmmm...    --jhannah 20110328
-   isa     => 'ArrayRef[Narwhal::Identity]',
+   isa    => 'ArrayRef[KiokuX::Model::UserAccounts::Identity]',
    default => sub { [] },
    handles => {
       all_identities    => 'elements',

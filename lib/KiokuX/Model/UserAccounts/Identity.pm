@@ -1,5 +1,7 @@
 package KiokuX::Model::UserAccounts::Identity;
 use Moose::Role;
+use Moose::Util::TypeConstraints;
+role_type('KiokuX::Model::UserAccounts::User');
 
 with qw(
    KiokuX::User
@@ -8,7 +10,7 @@ with qw(
 
 has user => (
    is  => 'rw',
-   isa => 'Narwhal::User',
+   isa => 'KiokuX::Model::UserAccounts::User',
 );
 
 no Moose::Role;

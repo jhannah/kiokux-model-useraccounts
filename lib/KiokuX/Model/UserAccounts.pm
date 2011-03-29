@@ -24,9 +24,8 @@ L<http://blog.woobling.org/2009/06/users-accounts-identities-and-roles.html>
 =cut
 
 sub get_identity {
-    my $self = shift;
-    my ($user_id) = @_;
-    return $self->lookup("identity:$user_id");
+    my ($self, $id) = @_;
+    return $self->lookup("identity:$id");
 }
 
 =head1 VERSION CONTROL
