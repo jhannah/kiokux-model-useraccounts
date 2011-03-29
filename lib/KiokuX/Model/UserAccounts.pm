@@ -28,6 +28,15 @@ sub get_identity {
     return $self->lookup("identity:$id");
 }
 
+=head2 get_role
+
+=cut
+
+sub get_role {
+    my ($self, $id) = @_;
+    return $self->lookup("role:$id");
+}
+
 =head1 VERSION CONTROL
 
 L<http://github.com/jhannah/kiokux-model-useraccounts/>
